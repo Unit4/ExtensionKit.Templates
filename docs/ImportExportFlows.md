@@ -2,7 +2,7 @@
 
 ### Getting Started
 
-Using the [U4.ExtensionsKit.PowerShell](..git s/docs/U4ExtensionsKitPowershellModule.md) module you can **import flows** to your tenant and also to **export** them. Use the link to get started.
+Using the [U4.ExtensionsKit.PowerShell](../docs/U4ExtensionsKitPowershellModule.md) module you can **import flows** to your tenant and also to **export** them. Use the link to get started.
 
 ### Import flow
 
