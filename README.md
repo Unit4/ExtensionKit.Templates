@@ -10,8 +10,8 @@ In this documentation you will find an overview of the U4EK, including the main 
 
 ## Index
 
-* [U4.ExtensionsKit.PowerShell module](/U4ExtensionsKitPowershellModule)
-* [Import/Export flows](/ImportExportFlows)
+* [U4.ExtensionsKit.PowerShell module](../blob/master/docs/U4ExtensionsKitPowershellModule)
+* [Import/Export flows](../blob/master/docs/ImportExportFlows)
 
 
 ## Contributing
