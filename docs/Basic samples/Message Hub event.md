@@ -7,13 +7,9 @@ Start configuration by selecting the trigger type: Message Hub Event
  ![broken image](images/Message_Hub_Event_1.jpg)
 
 Then, add the Source System, Message Type, Name and Version. Every field counts with a dropdown to select the values, except Version field that will be filled according to the value set in Name field.
-
 Source System: system in charge of publish messages regarding events occurring in others or to notify others about changes on itself.
-
 Message Type: supported messages options that can be published by a source system.
-
 Name: name of the event published by the source system.
-
 Version: most recent version of the event.
 
 *Take into account that if there is no event created for the selected Source System, in Name and Version fields wouldn’t be anything to show (fields are writable and you can fill them manually, but it doesn't mean that your flow will be well-configured and works).
