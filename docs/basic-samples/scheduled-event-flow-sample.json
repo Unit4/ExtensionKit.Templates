@@ -1,0 +1,50 @@
+{
+  "Version": 1,
+  "Description": "Scheduled event sample",
+  "Trigger": {
+    "Type": "scheduler",
+    "Version": 1,
+    "Config": {
+      "OccurrenceFrequency": "Daily",
+      "StartDate": "2019-03-01T23:59:59.999Z",
+      "EndDate": "2019-03-31T23:59:59.999Z",
+      "DailyConfiguration": {
+        "DailyFrequencyType": "OnceAt",
+        "DailyFrequencyDayStep": 1,
+        "DailyFrequencyOneOffTime": "12:00:00"
+      }
+    }
+  },
+  "Actions": [
+    {
+      "Type": "stop",
+      "Version": 1,
+      "Filter": null,
+      "Condition": null,
+      "Input": {
+        "Name": "dc9e0125-9aaf-4ea4-bd9f-371a3be6d819",
+        "Properties": [
+          {
+            "Name": "StopWith",
+            "Value": {
+              "Text": "Success"
+            }
+          },
+          {
+            "Name": "Summary",
+            "Value": {
+              "Text": "{{step0}}",
+              "Parameters": {
+                "step0": {
+                  "BodyPath": "step0:$"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "IsParked": false,
+  "Status": "Active"
+}
