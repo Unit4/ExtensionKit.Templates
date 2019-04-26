@@ -10,6 +10,7 @@ Unit4 Extensions Kit provides a set of PowerShell commandlets to support / simpl
 3. [Get commands available](#Get-commands-available)
 4. [Get help for a command](#Get-help-for-a-command)
 5. [Handling of the session](#Handling-of-the-session)
+6. [Import and Export commands](#Import-and-export-commands)
 
 
 ### Install the U4.ExtensionsKit.PowerShell module
@@ -110,4 +111,23 @@ Sample:
 ```
 Connect-U4EK -ImplicitFlowAuth -EKApiUri "https://ek-sample-api.u4pp.com/"  -ClientId "u4-ek-client"  -Tenant "bb493cc3-fake-4b55-ac17-36a741c5e9bb"
 
+```
+### Import and export commands
+
+
+Using the [U4.ExtensionsKit.PowerShell](../docs/U4ExtensionsKitPowershellModule.md) module you can **import flows** to your tenant and also to **export** them. Use the link to get started.
+
+### Import flow
+
+You can import flows together with your defined parameters to your tenant using the commandlet `Import-U4EKFlow`:
+```
+Import-U4EKFlow -TemplateFile "C:\Users\ekuser\Desktop\exportedflow.json" -ParameterFile "C:\Users\ekuser\Desktop\exportedparameters.json"
+```
+
+### Export flow
+
+You can also export your flows together with the parameters you've defined using the commandlet `Export-U4EKFlow`:
+
+```
+Export-U4EKFlow -FlowId bb493cc3-fake-4b55-ac17-36a741c5e9bb -TemplateFile "C:\Users\ekuser\Desktop\exportedflow.json"
 ```
