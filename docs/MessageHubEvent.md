@@ -12,7 +12,7 @@ Message Type: supported messages options that can be published by a source syste
 Name: name of the event published by the source system.
 Version: most recent version of the event.
 
-*Take into account that if there is no event created for the selected Source System, in Name and Version fields wouldn’t be anything to show (fields are writable and you can fill them manually, but it doesn't mean that your flow will be well-configured and works).
+>Take into account that if there is no event created for the selected Source System, in Name and Version fields wouldn’t be anything to show (fields are writable and you can fill them manually, but it doesn't mean that your flow will be well-configured and works).
 
 ![broken image](images/Message_Hub_Event_2.jpg)
 
