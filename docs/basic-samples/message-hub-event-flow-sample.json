@@ -1,0 +1,60 @@
+{
+  "Version": 1,
+  "Description": "Message Hub Event",
+  "Trigger": {
+    "Type": "mh-events",
+    "Version": 1,
+    "Config": {
+      "Tenant": null,
+      "SourceSystem": "u4bw",
+      "MessageType": "DocumentMessage",
+      "Name": "TravelExpense",
+      "Version": "1.0"
+    }
+  },
+  "Actions": [
+    {
+      "Type": "http-request",
+      "Version": 1,
+      "Filter": null,
+      "Condition": null,
+      "Input": {
+        "Name": "2a10dac3-814a-48d0-afa8-56595cfa91ef",
+        "Properties": [
+          {
+            "Name": "AuthenticationType",
+            "Value": {
+              "Text": "None"
+            }
+          },
+          {
+            "Name": "Method",
+            "Value": {
+              "Text": "POST"
+            }
+          },
+          {
+            "Name": "Url",
+            "Value": {
+              "Text": "https://vm7m7xpmain.agresso.int/BusinessWorld-WebServicesM7_XpMain_558/Service.svc?MobileAppTravelService/TravelV201212"
+            }
+          },
+          {
+            "Name": "ContentType",
+            "Value": {
+              "Text": "text/xml"
+            }
+          },
+          {
+            "Name": "Content",
+            "Value": {
+              "Text": "<soapenv:Envelope\nxmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"xmlns:trav=\"http://services.agresso.com/MobileAppTravelService/TravelV201212\">\n\n   <soapenv:Header/>\n\n   <soapenv:Body>\n\n      <trav:AddExternalTransaction>\n\n         <!--Optional:-->\n\n         <trav:ExternalTransactionUploadData>\n\n<trav:Amount>11</trav:Amount>           \n\n<trav:Date>2018-09-10T00:00:00.000</trav:Date>\n\n            <!--Optional:-->           \n\n<trav:ExpenseTypeId>AIRLINE</trav:ExpenseTypeId>\n\n            <!--Optional:-->           \n\n<trav:CurrencyCode>GBP</trav:CurrencyCode>\n\n            <!--Optional:-->\n\n            <trav:Description>New External Transaction</trav:Description>\n\n            <!--Optional:-->           \n\n<trav:Dim1Value>110</trav:Dim1Value>\n\n            <!--Optional:-->\n\n            <trav:Dim2Value>1000</trav:Dim2Value>\n\n            <!--Optional:-->           \n\n<trav:Dim4Value>ABW1-1</trav:Dim4Value>        \n\n</trav:ExternalTransactionUploadData>\n\n         <!--Optional:-->\n\n         <trav:credentials>\n\n            <!--Optional:-->           \n\n<trav:Username>sysenlong</trav:Username>\n\n            <!--Optional:-->           \n\n<trav:Client>EN</trav:Client>\n\n            <!--Optional:-->           \n\n<trav:Password>agresso</trav:Password>\n\n         </trav:credentials>\n\n      </trav:AddExternalTransaction>\n\n   </soapenv:Body>\n\n</soapenv:Envelope>"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "IsParked": false,
+  "Status": "Active"
+}
