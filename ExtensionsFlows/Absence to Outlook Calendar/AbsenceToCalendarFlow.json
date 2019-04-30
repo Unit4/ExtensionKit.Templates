@@ -1,0 +1,103 @@
+{
+  "Description": "Absences approval to Outlook Calendar",
+  "UserId": "",
+  "Trigger": {
+    "Type": "mh-events",
+    "Version": 1,
+    "Config": {
+      "Tenant": null,
+      "SourceSystem": "u4bw",
+      "MessageType": "DocumentMessage",
+      "Name": "workflowtransactions", /* This Enterprise document captures all workflow transactions*/
+      "Version": "1.0"
+    }
+  },
+  "Actions": [
+    {
+      "Type": "http-request",
+      "Version": 1,
+      "Filter": [
+        {
+          "BodyPath": "step0:$.Properties.event",
+          "Operation": 2,
+          "Value": "WfFinished" /* Event: Workflow has finished*/
+        },
+        {
+          "BodyPath": "step0:$.Properties.elementType",
+          "Operation": 2,
+          "Value": "ABSA" /* Element type: Absences*/
+        },
+        {
+          "BodyPath": "step0:$.Properties.actionCode",
+          "Operation": 2,
+          "Value": "AP" /* Action: Approved*/
+        }
+      ],
+      "Condition": null,
+      "Input": {
+        "Name": "7e54837b-bfd7-41bc-8e98-a38604d95824",
+        "Properties": [
+          {
+            "Name": "AuthenticationType",
+            "Value": {
+              "Text": "None"
+            }
+          },
+          {
+            "Name": "Method",
+            "Value": {
+              "Text": "POST"
+            }
+          },
+          {
+            "Name": "Url",
+            "Value": {
+              "Text": "https://graph.microsoft.com/v1.0/me/events"
+            }
+          },
+          {
+            "Name": "ContentType",
+            "Value": {
+              "Text": "application/json"
+            }
+          },
+          {
+            "Name": "Content",
+            "Value": {
+              "Text": "{\n  \"subject\": \"New Absence on U4BW: {{step0:Body.absenceCode}}\",\n  \"start\": {\n    \"dateTime\": \"{{step0:Body.dateFrom}}\",\n    \"timeZone\": \"UTC\"\n  },\n  \"body\": {\n    \"contentType\": \"HTML\",\n    \"content\": \"You are receiving this calendar event because your absence has been approved by {{step0:Properties.UserId}} on Unit4 Business World.\nTHIS IS AN AUTOMATED MESSAGE - PLEASE DO NOT REPLY DIRECTLY TO THIS EMAIL\"\n  },\n  \"end\": {\n    \"dateTime\": \"{{step0:Body.dateTo}}\",\n    \"timeZone\": \"UTC\"\n  },\n  \"attendees\": [\n    {\n      \"emailAddress\": {\n        \"address\":\"{{step0:Properties.mapHeadInitiatorU4Id}}\"\n      },\n      \"type\": \"required\"\n    }\n  ]\n}",
+              "Parameters": {
+                "step0:Body.absenceCode": {
+                  "BodyPath": "step0:$.Body.absenceCode"
+                },
+                "step0:Body.dateFrom": {
+                  "BodyPath": "step0:$.Body.dateFrom"
+                },
+                "step0:Properties.UserId": {
+                  "BodyPath": "step0:$.Properties.UserId"
+                },
+                "step0:Body.dateTo": {
+                  "BodyPath": "step0:$.Body.dateTo"
+                },
+                "step0:Properties.mapHeadInitiatorU4Id": {
+                  "BodyPath": "step0:$.Properties.mapHeadInitiatorU4Id"
+                }
+              }
+            }
+          },
+          {
+            "Name": "Headers",
+            "Value": {
+              "Authorization": {
+                "Text": "Bearer XXXXXXXX" /* You need to provide an Outh 2.0 bearer token or another authentication method*/
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "IsParked": false,
+  "Status": "Active",
+  "LastChangedBy": "",
+  "LastChangedAt": ""
+}
