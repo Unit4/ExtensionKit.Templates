@@ -1,4 +1,4 @@
-## When a customer is created or updated, populate the credit risk evaluation from Dun and Bradstreet in the Unit4 Business World Customer record.
+### When a customer is created or updated, populate the credit risk evaluation from Dun and Bradstreet in the Unit4 Business World Customer record.
 
 ## Version
 1.0
@@ -14,7 +14,7 @@ Use this flow to populate the Unit4 Business World Customer record with the cred
     * **d_b_rating_fx (read)**: the risk evaluation is stored in this field
     * **last_updated_fx (read)**: the date of the updating is registered in this field
  
-![](images/Message_Hub_Event_2.JPG)
+![broken image](/docs/images/RatingFlexifield.jpg)
 - An account on Dun and Bradstreet (https://developer.dnb.com/)
 - Unit4 Business World account with access to Customers
 
