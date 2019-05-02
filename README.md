@@ -1,4 +1,4 @@
-# Extensions Kit samples
+# Extensions Kit Flow samples
 
 This repository contains a collection of Unit4 Extensions Kit Flows.
 
@@ -10,20 +10,8 @@ In this documentation you will find an overview of the U4EK, including the main 
 
 ## Index
 
-<<<<<<< HEAD
-* [U4.ExtensionsKit.PowerShell module](../master/docs/U4ExtensionsKitPowershellModule.md)
-* [Import/Export flows](../master/docs/ImportExportFlows.md)
-<<<<<<< HEAD
-* [Basic Samples/Readme.md](../master/docs/basic-samples/README.md)
-=======
-* [Basic Samples/Readme](../master/docs/basic-samples/README.md)
->>>>>>> 6148d3c6bc64a436dea32d410b71185deac13d2c
-=======
 * [How to create your own flows](docs/EKTriggers.md)
 * [How to import existing flows](ExtensionsFlows/README.md)
-
->>>>>>> mybranchekgit
-
 
 ## Contributing
 
