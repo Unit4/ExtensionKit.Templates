@@ -1,6 +1,7 @@
-## Purpose of the Extensions Flow
+## Create an Outlook calendar event when a new absence is approved in Unit4 Business World
 
-Create an Outlook calendar event when a new absence is approved in Unit4 Business World
+## Version
+1.0
 
 ## Description
 
