@@ -1,0 +1,235 @@
+{
+  "Description": "Evaluate Customer credit risk",
+  "UserId": "",
+  "Trigger": {
+    "Type": "mh-events",
+    "Version": 1,
+    "Config": {
+      "Tenant": null,
+      "SourceSystem": "u4bw",
+      "MessageType": "DocumentMessage",
+      "Name": "customer",
+      "Version": "1.0"
+    }
+  },
+  "Actions": [
+    {
+      "Type": "http-request",
+      "Version": 1,
+      "Filter": [
+        {
+          "BodyPath": "step0:$.Body.customFieldGroups.custrating.update_rating_fx",
+          "Operation": 2,
+          "Value": "true"
+        }
+      ],
+      "Condition": null,
+      "Input": {
+        "Name": "eb6c884e-477e-4337-9c60-57bceaced84b",
+        "Properties": [
+          {
+            "Name": "AuthenticationType",
+            "Value": {
+              "Text": "None"
+            }
+          },
+          {
+            "Name": "Method",
+            "Value": {
+              "Text": "POST"
+            }
+          },
+          {
+            "Name": "Url",
+            "Value": {
+              "Text": "https://direct.dnb.com/Authentication/V2.0/"
+            }
+          },
+          {
+            "Name": "ContentType",
+            "Value": {
+              "Text": "application/json"
+            }
+          },
+          {
+            "Name": "Headers",
+            "Value": {
+              "x-dnb-user": {
+                "Text": "DNBuser" /* Insert here the account name registered in Dun and Bradstreet application*/
+              },
+              "x-dnb-pwd": {
+                "Text": "DNBPassword" /* Insert here the account password registered in Dun and Bradstreet application*/
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Type": "http-request",
+      "Version": 1,
+      "Filter": null,
+      "Condition": null,
+      "Input": {
+        "Name": "f3e7386c-174d-4659-9fb8-509afd253069",
+        "Properties": [
+          {
+            "Name": "AuthenticationType",
+            "Value": {
+              "Text": "None"
+            }
+          },
+          {
+            "Name": "Method",
+            "Value": {
+              "Text": "GET"
+            }
+          },
+          {
+            "Name": "Url",
+            "Value": {
+              "Text": "https://direct.dnb.com/V5.0/organizations/{{step0:Body.customFieldGroups.custrating.dbid_fx}}/products/RTNG_TRND",
+              "Parameters": {
+                "step0:Body.customFieldGroups.custrating.dbid_fx": {
+                  "BodyPath": "step0:$.Body.customFieldGroups.custrating.dbid_fx"
+                }
+              }
+            }
+          },
+          {
+            "Name": "ContentType",
+            "Value": {
+              "Text": "application/json"
+            }
+          },
+          {
+            "Name": "Headers",
+            "Value": {
+              "Authorization": {
+                "Text": "{{step1:Response.AuthenticationDetail.Token}}",
+                "Parameters": {
+                  "step1:Response.AuthenticationDetail.Token": {
+                    "BodyPath": "step1:$.Response.AuthenticationDetail.Token"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Type": "http-request",
+      "Version": 1,
+      "Filter": null,
+      "Condition": null,
+      "Input": {
+        "Name": "9938e2fc-8b41-4d07-9e8b-d41ab757f4d0",
+        "Properties": [
+          {
+            "Name": "AuthenticationType",
+            "Value": {
+              "Text": "None"
+            }
+          },
+          {
+            "Name": "Method",
+            "Value": {
+              "Text": "GET"
+            }
+          },
+          {
+            "Name": "Url",
+            "Value": {
+              "Text": "http://worldclockapi.com/api/json/utc/now"
+            }
+          },
+          {
+            "Name": "ContentType",
+            "Value": {
+              "Text": "application/json"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Type": "http-request",
+      "Version": 1,
+      "Filter": null,
+      "Condition": null,
+      "Input": {
+        "Name": "eaeeb343-cfa3-4b1e-a96a-b6c9bde28ee9",
+        "Properties": [
+          {
+            "Name": "AuthenticationType",
+            "Value": {
+              "Text": "Basic"
+            }
+          },
+          {
+            "Name": "Username",
+            "Value": {
+              "Text": "Unit4BWUsername"  /* Insert here the Unit4 account user name*/
+            }
+          },
+          {
+            "Name": "Password",
+            "Value": {
+              "Text": "@@BusinessWorldAccountPassword" /* Password is retrieved from CheckCreditRiskParameters.json*/
+            }
+          },
+          {
+            "Name": "Method",
+            "Value": {
+              "Text": "PATCH"
+            }
+          },
+          {
+            "Name": "Url",
+            "Value": {
+              "Text": "https://mycompany.com/BusinessWorld-Web-Api/v1/customers/{{step0:Body.customerId}}?companyId={{step0:Body.companyId}}", /* Replace https://mycompany.com/BusinessWorld-Web-Api with your Unit4 Business World API URL */
+              "Parameters": {
+                "step0:Body.customerId": {
+                  "BodyPath": "step0:$.Body.customerId"
+                },
+                "step0:Body.companyId": {
+                  "BodyPath": "step0:$.Body.companyId"
+                }
+              }
+            }
+          },
+          {
+            "Name": "ContentType",
+            "Value": {
+              "Text": "application/json-patch+json"
+            }
+          },
+          {
+            "Name": "Content",
+            "Value": {
+              "Text": "[{\n        \"path\": \"customFieldGroups/custrating/update_rating_fx\",\n        \"op\": \"Replace\",\n        \"value\": false\n    },\n    {\n        \"path\": \"customFieldGroups/CUSTRATING/d_b_rating_fx\",\n        \"op\": \"Replace\",\n        \"value\": \"{{step2:Response.OrderProductResponse.OrderProductResponseDetail.Product.Organization.Assessment.DNBStandardRating.DNBStandardRating}}\"\n    },\n    {\n        \"path\": \"customFieldGroups/CUSTRATING/last_updated_fx\",\n        \"op\": \"Replace\",\n        \"value\": \"{{step3:Response.currentDateTime}}\"\n    }\n]",
+              "Parameters": {
+                "step2:Response.OrderProductResponse.OrderProductResponseDetail.Product.Organization.Assessment.DNBStandardRating.DNBStandardRating": {
+                  "BodyPath": "step2:$.Response.OrderProductResponse.OrderProductResponseDetail.Product.Organization.Assessment.DNBStandardRating.DNBStandardRating"
+                },
+                "step3:Response.currentDateTime": {
+                  "BodyPath": "step3:$.Response.currentDateTime"
+                }
+              }
+            }
+          },
+          {
+            "Name": "Headers",
+            "Value": {
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "IsParked": false,
+  "Status": "Active",
+  "LastChangedBy": "",
+  "LastChangedAt": ""
+}
