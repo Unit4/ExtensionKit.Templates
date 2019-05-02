@@ -12,7 +12,11 @@ In this documentation you will find an overview of the U4EK, including the main 
 
 * [U4.ExtensionsKit.PowerShell module](../master/docs/U4ExtensionsKitPowershellModule.md)
 * [Import/Export flows](../master/docs/ImportExportFlows.md)
+<<<<<<< HEAD
 * [Basic Samples/Readme.md](../master/docs/basic-samples/README.md)
+=======
+* [Basic Samples/Readme](../master/docs/basic-samples/README.md)
+>>>>>>> 6148d3c6bc64a436dea32d410b71185deac13d2c
 
 
 ## Contributing

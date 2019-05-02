@@ -1,0 +1,52 @@
+{
+  "Version": 1,
+  "Description": "Webhook",
+  "Trigger": {
+    "Type": "http-webhook",
+    "Version": 1,
+    "Config": {
+      "Name": "Webhook name",
+      "TenantId": null,
+      "AuthenticationType": "None"
+    }
+  },
+  "Actions": [
+    {
+      "Type": "http-request",
+      "Version": 1,
+      "Filter": null,
+      "Condition": null,
+      "Input": {
+        "Name": "e610d451-e520-4bac-bbb8-1639f0927338",
+        "Properties": [
+          {
+            "Name": "AuthenticationType",
+            "Value": {
+              "Text": "None"
+            }
+          },
+          {
+            "Name": "Method",
+            "Value": {
+              "Text": "GET"
+            }
+          },
+          {
+            "Name": "Url",
+            "Value": {
+              "Text": "https://jsonplaceholder.typicode.com/posts/1"
+            }
+          },
+          {
+            "Name": "ContentType",
+            "Value": {
+              "Text": "application/json"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "IsParked": false,
+  "Status": "Active"
+}

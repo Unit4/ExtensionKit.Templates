@@ -5,6 +5,7 @@ The *Scheduled Event* trigger allows a flow to be initiated on a regular basis b
 
 ## Usage
 *Here you'll can find a step by step on how to create a flow sample with a scheduled event trigger*
+* [How to create a flow with a Scheduled Event trigger](ScheduledEvent.md)
 
 
 # Webhook
@@ -14,7 +15,7 @@ The *Webhook* trigger allows a HTTP request to initiate a Flow defined in the Un
 
 ## Usage
 *Here you'll can find a step by step on how to create a flow sample with a webhook trigger*
-
+* [How to create a flow with a Webhook trigger](Webhook.md)
 
 # Message Hub Events
 
@@ -23,3 +24,4 @@ The *Message Hub Event* trigger allows a flow to be initiated when a particular 
 
 ## Usage
 *Here you'll can find a step by step on how to create a flow sample with a message hub event trigger*
+* [How to create a flow with a Message Hub Event trigger](MessageHubEvent.md)
