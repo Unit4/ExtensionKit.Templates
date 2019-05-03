@@ -1,0 +1,86 @@
+{
+  "FlowId": "e2afe6c7-9b92-481f-a052-ef5fb74a87de",
+  "Version": 2,
+  "Description": "Wanda welcomes new employees",
+  "UserId": "e755e202-5e39-4d01-a23d-d48a06a6fa45\\james.sawyer.productmanagement@upride.org",
+  "TenantId": null,
+  "Trigger": {
+    "Type": "mh-events",
+    "Version": 1,
+    "Config": {
+      "Tenant": null,
+      "SourceSystem": "u4bw",
+      "MessageType": "DocumentMessage",
+      "Name": "employee",
+      "Version": "1.0"
+    }
+  },
+  "Actions": [
+    {
+      "Type": "da-push-text",
+      "Version": 1,
+      "Filter": null,
+      "Condition": [
+        {
+          "BodyPath": "step0:$.Properties.OperationType",
+          "Operation": 2,
+          "Value": "Added"
+        }
+      ],
+      "Input": {
+        "Name": "f3891f51-8eee-4a6d-b42f-56c0bbdf5bf0",
+        "Properties": [
+          {
+            "Name": "Unit4Id",
+            "Value": {
+              "Text": "{{step0:Properties.U4ID}}",
+              "Parameters": {
+                "step0:Properties.U4ID": {
+                  "BodyPath": "step0:$.Properties.U4ID"
+                }
+              }
+            }
+          },
+          {
+            "Name": "TenantId",
+            "Value": {
+              "Text": null
+            }
+          },
+          {
+            "Name": "FullName",
+            "Value": {
+              "Text": "{{step0:Body.nameInformation.firstName}} {{step0:Body.nameInformation.surname}}",
+              "Parameters": {
+                "step0:Body.nameInformation.firstName": {
+                  "BodyPath": "step0:$.Body.nameInformation.firstName"
+                },
+                "step0:Body.nameInformation.surname": {
+                  "BodyPath": "step0:$.Body.nameInformation.surname"
+                }
+              }
+            }
+          },
+          {
+            "Name": "NotificationText",
+            "Value": {
+              "Text": "Hi {{step0:Body.nameInformation.firstName}} {{step0:Body.nameInformation.surname}}, I want to welcome you to our company.",
+              "Parameters": {
+                "step0:Body.nameInformation.firstName": {
+                  "BodyPath": "step0:$.Body.nameInformation.firstName"
+                },
+                "step0:Body.nameInformation.surname": {
+                  "BodyPath": "step0:$.Body.nameInformation.surname"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "IsParked": false,
+  "Status": "Active",
+  "LastChangedBy": "e755e202-5e39-4d01-a23d-d48a06a6fa45\\james.sawyer.productmanagement@upride.org",
+  "LastChangedAt": "2019-05-03T08:37:41Z"
+}
