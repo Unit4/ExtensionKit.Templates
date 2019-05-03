@@ -4,7 +4,7 @@ Using the [U4.ExtensionsKit.PowerShell](../docs/U4ExtensionsKitPowershellModule.
 
 ## Getting started
 
-Before starting, be sure you've already installed the U4.ExtensionsKit.PowerShell module. You can check that running the following command in your Powershell:
+Be sure you've already installed the U4.ExtensionsKit.PowerShell module. You can check that running the following command in your Powershell:
 
 ```
 Get-Command -Module U4.ExtensionsKit.PowerShell
@@ -20,10 +20,10 @@ Access to the **PopulateSupplierData** folder and download the .json files:
 
 1. Click on `PopulateSupplierDataFlow.json`
 2. Click **Raw** button
-[image]
-3. Click right-button and then select **Save as**
-[image]
-4. Save it in your computer
+![image](images/raw_button.png)
+3. Click right-button and then select **Save as** to save it in your computer. 
+![image](images/save_as.png)
+> Be aware you must save it with the ".json" extension at the end
 
 Let's do the same with ``PopulateSupplierDataParameters.json``
 
