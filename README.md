@@ -1,4 +1,4 @@
-# Extensions Kit Flow samples
+# Extensions Kit Flow Templates
 
 This repository contains a collection of Unit4 Extensions Kit Flows.
 
