@@ -11,7 +11,7 @@ In this documentation you will find an overview of the U4EK, including the main 
 ## Index
 
 * [How to create your own flows](docs/EKTriggers.md)
-* [How to import existing flows](docs/ImportExportFlows.md)
+* [How to import existing flows](ExtensionsFlows/README.md)
 
 
 
