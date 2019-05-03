@@ -12,6 +12,7 @@ In this documentation you will find an overview of the U4EK, including the main 
 
 * [How to create your own flows](docs/basic-samples/README.md)
 * [How to import existing flows](ExtensionsFlows/README.md)
+* [Unit4 Business World Extensions Flows](ExtensionsFlows/U4BusinessWorld)
 
 ## Contributing
 
