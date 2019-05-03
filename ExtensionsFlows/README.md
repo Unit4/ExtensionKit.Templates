@@ -43,6 +43,9 @@ Connect-U4EK -ImplicitFlowAuth -EKApiUri "https://ek-upride-api.u4pp.com/"  -Cli
 
 Once the connection has been established and we've downloaded the flow we want to import, we can use the `Import-U4EKFlow` commandlet for importing our flow.
 
+> Be aware that some flows may need some authentication parameters to be configured. Check the parameters.json file before importing the flow and fill the credentials requested on it. 
+![image](images/authentication_parameters.png)
+
 ```
 Import-U4EKFlow -TemplateFile "C:\Users\jamess\Desktop\PopulateSupplierDataFlow.json" -ParameterFile "C:\Users\jamess\Desktop\PopulateSupplierDataParameters.json"
 ```
