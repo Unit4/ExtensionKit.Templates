@@ -83,7 +83,7 @@
           {
             "Name": "Password",
             "Value": {
-              "Text": "@@actionParameter001"
+              "Text": "@@BusinessWorldAccountPassword"
             }
           },
           {
@@ -95,7 +95,7 @@
           {
             "Name": "Url",
             "Value": {
-              "Text": "https://upride7.u4demo.com/BusinessWorld-Web-Api-productmanagement/v1/suppliers/{{step0:Body.supplierId}}",
+              "Text": "https://mycompany.com/BusinessWorld-Web-Api/v1/suppliers/{{step0:Body.supplierId}}", /* This url needs to be modified to adjust to your API installation */
               "Parameters": {
                 "step0:Body.supplierId": {
                   "BodyPath": "step0:$.Body.supplierId"

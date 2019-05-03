@@ -1,0 +1,228 @@
+{
+  "Description": "US Watchlist update",
+  "UserId": "",
+  "Trigger": {
+    "Type": "mh-events",
+    "Version": 1,
+    "Config": {
+      "Tenant": null,
+      "SourceSystem": "u4bw",
+      "MessageType": "DocumentMessage",
+      "Name": "customer",
+      "Version": "1.0"
+    }
+  },
+  "Actions": [
+    {
+      "Type": "http-request",
+      "Version": 1,
+      "Filter": [
+        {
+          "BodyPath": "step0:$.Body.customFieldGroups.custcheck.update_check_fx",
+          "Operation": 2,
+          "Value": "true"
+        }
+      ],
+      "Condition": null,
+      "Input": {
+        "Name": "9f37e4b5-30ce-4bc7-9a46-cf5e47832636",
+        "Properties": [
+          {
+            "Name": "AuthenticationType",
+            "Value": {
+              "Text": "None"
+            }
+          },
+          {
+            "Name": "Method",
+            "Value": {
+              "Text": "GET"
+            }
+          },
+          {
+            "Name": "Url",
+            "Value": {
+              "Text": "https://api.trade.gov/consolidated_screening_list/search?api_key={{parameters:Watchlist_API_Key}}&name={{step0:Body.customerName}}",
+              "Parameters": {
+                "parameters:Watchlist_API_Key": {
+                  "BodyPath": "parameters:$.Watchlist_API_Key"
+                },
+                "step0:Body.customerName": {
+                  "BodyPath": "step0:$.Body.customerName"
+                }
+              }
+            }
+          },
+          {
+            "Name": "ContentType",
+            "Value": {
+              "Text": "application/json"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Type": "http-request",
+      "Version": 1,
+      "Filter": [
+        {
+          "BodyPath": "step1:$.Response.total",
+          "Operation": 3,
+          "Value": "0"
+        }
+      ],
+      "Condition": null,
+      "Input": {
+        "Name": "a015efb7-d6f4-4c20-9cf2-7868ee5833b4",
+        "Properties": [
+          {
+            "Name": "AuthenticationType",
+            "Value": {
+              "Text": "None"
+            }
+          },
+          {
+            "Name": "Method",
+            "Value": {
+              "Text": "GET"
+            }
+          },
+          {
+            "Name": "Url",
+            "Value": {
+              "Text": "http://worldclockapi.com/api/json/utc/now"
+            }
+          },
+          {
+            "Name": "ContentType",
+            "Value": {
+              "Text": "application/json"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Type": "http-request",
+      "Version": 1,
+      "Filter": null,
+      "Condition": null,
+      "Input": {
+        "Name": "37c6750e-3a95-4ade-bc3c-fd8861032e6c",
+        "Properties": [
+          {
+            "Name": "AuthenticationType",
+            "Value": {
+              "Text": "Basic"
+            }
+          },
+          {
+            "Name": "Username",
+            "Value": {
+              "Text": "system"
+            }
+          },
+          {
+            "Name": "Password",
+            "Value": {
+              "Text": "@@BusinessWorldAccountPassword"
+            }
+          },
+          {
+            "Name": "Method",
+            "Value": {
+              "Text": "PATCH"
+            }
+          },
+          {
+            "Name": "Url",
+            "Value": {
+              "Text": "https://upride7.u4demo.com/BusinessWorld-Web-Api-productmanagement/v1/customers/{{step0:Body.customerId}}",
+              "Parameters": {
+                "step0:Body.customerId": {
+                  "BodyPath": "step0:$.Body.customerId"
+                }
+              }
+            }
+          },
+          {
+            "Name": "ContentType",
+            "Value": {
+              "Text": "application/json-patch+json"
+            }
+          },
+          {
+            "Name": "Content",
+            "Value": {
+              "Text": "[\n{\"path\":\"customFieldGroups/custcheck/watchlist_fx\", \"op\":\"Replace\",\"value\":\"true\"},\n{\"path\":\"customFieldGroups/custcheck/update_check_fx\", \"op\":\"Replace\",\"value\":\"false\"},\n{      \"path\": \"customFieldGroups/CUSTCHECK/last_updated_fx\",\n        \"op\": \"Replace\",\n        \"value\": \"{{step2:Response.currentDateTime}}\"\n    }\n]",
+              "Parameters": {
+                "step2:Response.currentDateTime": {
+                  "BodyPath": "step2:$.Response.currentDateTime"
+                }
+              }
+            }
+          },
+          {
+            "Name": "Headers",
+            "Value": {
+              "Authorization": {
+                "Text": "Basic c3lzdGVtOlVwcmlkZTk5"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Type": "da-push-text",
+      "Version": 1,
+      "Filter": null,
+      "Condition": null,
+      "Input": {
+        "Name": "0fc0f028-bfb0-4da2-905c-f355d0e9915a",
+        "Properties": [
+          {
+            "Name": "Unit4Id",
+            "Value": {
+              "Text": "manuel.tristao.productmanagement@upride.org"
+            }
+          },
+          {
+            "Name": "TenantId",
+            "Value": {
+              "Text": null
+            }
+          },
+          {
+            "Name": "FullName",
+            "Value": {
+              "Text": "Manuel Tristao"
+            }
+          },
+          {
+            "Name": "NotificationText",
+            "Value": {
+              "Text": "The customer **{{step0:Body.customerName}}** with Id: **{{step0:Body.customerId}}** is present in the U.S. Government Watchlist, please take the corresponding actions. You can find more information [in this link.]({{step1:Response.results[0].source_information_url}})",
+              "Parameters": {
+                "step0:Body.customerName": {
+                  "BodyPath": "step0:$.Body.customerName"
+                },
+                "step0:Body.customerId": {
+                  "BodyPath": "step0:$.Body.customerId"
+                },
+                "step1:Response.results[0].source_information_url": {
+                  "BodyPath": "step1:$.Response.results[0].source_information_url"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "IsParked": false,
+  "Status": "Active",
+  "LastChangedBy": "",
+  "LastChangedAt": ""
+}

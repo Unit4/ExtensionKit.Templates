@@ -1,6 +1,7 @@
-## Purpose of the Extensions Flow
+## Populate Supplier address in Unit4 Business World using the KVK Chamber of Commerce database.
 
-Populate Supplier data in Business World using the KVK Chamber of Commerce database.
+## Extensions Flow version
+1.0
 
 ## Description
 
