@@ -1,5 +1,5 @@
 # Extensions Kit Triggers
-A Flow consists of a Trigger, an optional filter on the data contained in the Trigger event, and a sequence of one or more Actions.  
+A [Flow](https://docs-external.u4pp.com/extensions-kit/glossary/flow/) consists of a [Trigger](https://docs-external.u4pp.com/extensions-kit/glossary/trigger/), an optional filter on the data contained in the Trigger event, and a sequence of one or more [Actions](https://docs-external.u4pp.com/extensions-kit/glossary/action/).  
 Below you will find a brief introduction of all the triggers that can be used when defining your flow and how to used each one in a flow.
 # Scheduled Events
 
