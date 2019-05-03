@@ -16,7 +16,7 @@ Version: most recent version of the event.
 
 ![broken image](images/Message_Hub_Event_2.JPG)
 
-![broken image](images/Message_Hub_Event_3.JPG)
+![broken image](images/Message_Hub_Event-3.JPG)
  
 ![broken image](images/Message_Hub_Event_4.JPG)
 
@@ -28,6 +28,6 @@ After executing the request it will return the HTTP response status code and the
  
 ![broken image](images/Message_Hub_Event_6.JPG)
 
-![broken image](images/Message_Hub_Event_7.JPG)
+![broken image](images/Message_Hub_Event-7.JPG)
 
 Remember to add a name to your Flow and Save it.
