@@ -10,8 +10,8 @@ In this documentation you will find an overview of the Unit4 Extensions Kit, inc
 
 ## Index
 
-* [How to create your own flows](docs/basic-samples/README.md)
-* [How to import existing flows](ExtensionsFlows/README.md)
+* [How to create your own flows](docs/basic-samples)
+* [How to import existing flows](ExtensionsFlows)
 * [Unit4 Business World Extensions Flows](ExtensionsFlows/U4BusinessWorld)
 
 ## Contributing
