@@ -1,4 +1,4 @@
-# Extensions Kit Triggers
+# Extension Kit Triggers
 A [Flow](https://docs-external.u4pp.com/extensions-kit/glossary/flow/) consists of a [Trigger](https://docs-external.u4pp.com/extensions-kit/glossary/trigger/), an optional filter on the data contained in the Trigger event, and a sequence of one or more [Actions](https://docs-external.u4pp.com/extensions-kit/glossary/action/).  
 Below you will find a brief introduction of all the triggers that can be used when defining your flow and how to used each one in a flow.
 # Scheduled Events
@@ -15,7 +15,7 @@ The *Scheduled Event* trigger allows a flow to be initiated on a regular basis b
 # Webhook
 
 ## Description
-The *Webhook* trigger allows a HTTP request to initiate a Flow defined in the Unit4 Extensions Kit (U4EK). In a typical scenario this trigger would be utilized to allow a workflow defined somewhere else to continue execution in a U4EK Flow.
+The *Webhook* trigger allows a HTTP request to initiate a Flow defined in the Unit4 Extension Kit (U4EK). In a typical scenario this trigger would be utilized to allow a workflow defined somewhere else to continue execution in a U4EK Flow.
 
 ## Usage
 *Here you will find a step by step tutorial on how to create a flow sample with a webhook trigger*

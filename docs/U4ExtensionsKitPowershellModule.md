@@ -1,8 +1,8 @@
-## U4.ExtensionsKit.PowerShell module
+## Unit4 Extension Kit PowerShell module
 
 ### Getting Started
 
-Unit4 Extensions Kit provides a set of PowerShell commandlets to support / simplify / automate administrative tasks. These commandlets are published at the Unit4 PP Nuget store.
+Unit4 Extension Kit provides a set of PowerShell commandlets to support / simplify / automate administrative tasks. These commandlets are published at the Unit4 PP Nuget store.
 
 ### Index
 1. [Install the U4.ExtensionsKit.PowerShell module](#Install-the-U4.ExtensionsKit.PowerShell-module)
@@ -13,7 +13,7 @@ Unit4 Extensions Kit provides a set of PowerShell commandlets to support / simpl
 6. [Import and Export commands](#Import-and-export-commands)
 
 
-### Install the U4.ExtensionsKit.PowerShell module
+### Install the Unit4 Extension Kit PowerShell module
 
 Check if the People Platform nuget repository is already registered on your computer:
 
@@ -64,7 +64,7 @@ Get-Help -Name Connect-U4EK -Full
 ```
 ### Handling of the session
 
-To use the Unit4 ExtensionsKit PowerShell commandlets, the user (and/or client) must be authenticated and authorized. The commandlet pair `Connect-U4EK / Disconnect-U4EK` is used to establish/close the session. When establishing a session we can use two different authentication methods, `ClientCredentialAuth` and `ImplicitFlowAuth`.
+To use the Unit4 Extension Kit PowerShell commandlets, the user (and/or client) must be authenticated and authorized. The commandlet pair `Connect-U4EK / Disconnect-U4EK` is used to establish/close the session. When establishing a session we can use two different authentication methods, `ClientCredentialAuth` and `ImplicitFlowAuth`.
 
 Once the session is established with Connect-U4EK and the desired operations were executed, **it is highly recommended to close the session with the Disconnect-U4EK commandlet.** This commandlet does not have any parameters. All session data will be cleared.
 
@@ -90,7 +90,7 @@ Windows Registry Editor Version 5.00
 
 **Parameter** | **Description**
 --- | --- 
-EKApiUri | The Uri of the Unit4 ExtensionsKit API
+EKApiUri | The Uri of the Unit4 Extension Kit API
 ClientId | An administrative client configured in the Unit4 Identity Services using ClientCredentials flow
 ClientSecret | The secret defined for the administrative client configured in the Unit4 Identity Services
 
@@ -103,7 +103,7 @@ Connect-U4EK -ClientCredentialAuth -EKApiUri "https://ek-sandbox-api.u4pp.com/" 
 
 **Parameter** | **Description**
 --- | --- 
-EKApiUri | The Uri of the Unit4 ExtensionsKit API
+EKApiUri | The Uri of the Unit4 Extension Kit API
 ClientId | An administrative client configured in the Unit4 Identity Services using ClientCredentials flow
 Tenant | The Tenant for which the commands will be executed. An interactive login process will be initiated.
 

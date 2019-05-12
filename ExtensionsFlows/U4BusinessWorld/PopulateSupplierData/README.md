@@ -1,6 +1,6 @@
 ## Populate Supplier address in Unit4 Business World using the KVK Chamber of Commerce database.
 
-## Extensions Flow version
+## Extension Flow version
 1.0
 
 ## Description

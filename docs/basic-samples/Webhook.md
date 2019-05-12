@@ -1,6 +1,6 @@
 ﻿# Creating a flow with a ‘Webhook’ trigger
 
-The Webhook trigger allows a HTTP request to initiate a Flow defined in the Unit4 Extensions Kit (U4EK). In a typical scenario this trigger would be utilized to allow a workflow defined somewhere else to continue execution in a U4EK Flow.
+The Webhook trigger allows a HTTP request to initiate a Flow defined in the Unit4 Extension Kit (U4EK). In a typical scenario this trigger would be utilized to allow a workflow defined somewhere else to continue execution in a U4EK Flow.
 
 ![broken image](images/Webhook_1.JPG)
 
