@@ -28,9 +28,9 @@ Access to the **PopulateSupplierData** folder and download the .json files:
 Let's do the same with ``PopulateSupplierDataParameters.json``
 
 
-## Start Unit4 ExtensionsKit Powershell commandlets
+## Start Unit4 Extension Kit Powershell commandlets
 
-**To use the Unit4 ExtensionsKit PowerShell commandlets, the user (and/or client) must be authenticated and authorized**. 
+**To use the Unit4 Extension Kit PowerShell commandlets, the user (and/or client) must be authenticated and authorized**. 
 >The commandlet pair `Connect-U4EK / Disconnect-U4EK` is used to establish/close the session. When establishing a session we can use two different authentication methods, `ClientCredentialAuth` and `ImplicitFlowAuth`. 
 
 Let's go for `ImplicitFlowAuth` for instance:

@@ -1,6 +1,6 @@
 ## When a new employee is registered in Unit4 Business World, the digital assistant sends a welcome message
 
-## Extensions Flow version
+## Extension Flow version
 1.0
 
 ## Description
