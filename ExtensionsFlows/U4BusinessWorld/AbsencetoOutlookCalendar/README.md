@@ -9,19 +9,19 @@ Use this flow to automatically send a calendar event from an Outlook 365 account
 
 
 ## System requirements
-- A workflow defined for the element type ABSENCES
+- A workflow defined for the ABSENCES element type 
 - Unit4 Business World account with access to the Absences menu
 - An Outlook 365 account
 
 ## Authentication
 
-Step1. 
--	Type: Basic authentication
--	Required: User and Password of Unit4 Business World account
+Step 1 
+-	Type: basic authentication
+-	Required: a user and a password of a Unit4 Business World account
 
-Step2.
+Step 2
 -	Type: OAuth 2.0
--	Required: Bearer token of an Outlook 365 account
+-	Required: bearer token of an Outlook 365 account
 
 ## Parameters
 

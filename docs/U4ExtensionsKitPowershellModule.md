@@ -2,7 +2,7 @@
 
 ### Getting Started
 
-Unit4 Extension Kit provides a set of PowerShell commandlets to support / simplify / automate administrative tasks. These commandlets are published at the Unit4 PP Nuget store.
+Unit4 Extension Kit provides a set of PowerShell commandlets to support / simplify / automate administrative tasks. These commandlets are published on the Unit4 PP Nuget store.
 
 ### Index
 1. [Install the U4.ExtensionsKit.PowerShell module](#Install-the-U4.ExtensionsKit.PowerShell-module)
@@ -42,7 +42,7 @@ Install-Module -Name U4.ExtensionsKit.PowerShell -Repository U4PP -Scope AllUser
 ### Update to the latest version
 > We recommend that you check for new versions of the Identity Services powershell commandlets regularly. To avoid dependency conflicts always make sure you start a new PowerShell session or window after an upgrade.
 
-To keep the module up to date run the following command:
+To keep the module up to date, run the following command:
 ```
 Update-Module -Name U4.ExtensionsKit.PowerShell -Force
 ```
@@ -64,11 +64,11 @@ Get-Help -Name Connect-U4EK -Full
 ```
 ### Handling of the session
 
-To use the Unit4 Extension Kit PowerShell commandlets, the user (and/or client) must be authenticated and authorized. The commandlet pair `Connect-U4EK / Disconnect-U4EK` is used to establish/close the session. When establishing a session we can use two different authentication methods, `ClientCredentialAuth` and `ImplicitFlowAuth`.
+To use the Unit4 Extension Kit PowerShell commandlets, the user (and/or the client) must be authenticated and authorized. The commandlet pair `Connect-U4EK / Disconnect-U4EK` is used to establish/close the session. When establishing a session we can use two different authentication methods, `ClientCredentialAuth` and `ImplicitFlowAuth`.
 
 Once the session is established with Connect-U4EK and the desired operations were executed, **it is highly recommended to close the session with the Disconnect-U4EK commandlet.** This commandlet does not have any parameters. All session data will be cleared.
 
->Note If you can't connect with error "An error occurred while sending the request", it could be the TLS 1.2 issue. Try setting the SecurityProtocol variable in PowerShell or update your registry settings as shown below
+>Note If you can't connect with error "An error occurred while sending the request", it could be the TLS 1.2 issue. Try setting the SecurityProtocol variable in PowerShell or update your registry settings as shown below.
 
 **Example: Set SecurityProtocol variable from PowerShell command prompt**
 ```
@@ -115,7 +115,7 @@ Connect-U4EK -ImplicitFlowAuth -EKApiUri "https://ek-sample-api.u4pp.com/"  -Cli
 ### Import and export commands
 
 
-Using the [U4.ExtensionsKit.PowerShell](../docs/U4ExtensionsKitPowershellModule.md) module you can **import flows** to your tenant and also to **export** them. Use the link to get started.
+Using the [U4.ExtensionsKit.PowerShell](../docs/U4ExtensionsKitPowershellModule.md) module you can **import flows** to your tenant and also **export** them. Use the link to get started.
 
 ### Import flow
 

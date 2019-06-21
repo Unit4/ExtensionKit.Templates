@@ -1,8 +1,8 @@
-# Creating a flow with a ‘Scheduled Event’ trigger
+# Creating a flow with the ‘Scheduled Event’ trigger
 
-Create a flow with a ‘Scheduled event’ trigger to initiate a regular flow established by the user in base a specific configuration.
+Create a flow with the ‘Scheduled event’ trigger to initiate a regular flow established by the user with a specific configuration.
 
-Start configuration by selecting the trigger type: Scheduled event and filling all fields.
+Start configuration by selecting the Scheduled event trigger type and by filling in all the fields.
 
 ![broken image](images/Scheduled_Event_1.JPG) 
 
@@ -31,4 +31,4 @@ In the ‘History’ section the flow will register every execution and the rela
 
 ![broken image](images/Scheduled_Event_6.JPG)
 
-Remember to add a name to your Flow and Save it.
+Remember to add a name to your flow and save it.

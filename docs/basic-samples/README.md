@@ -1,6 +1,6 @@
 # Extension Kit Triggers
 A [Flow](https://docs-external.u4pp.com/extensions-kit/glossary/flow/) consists of a [Trigger](https://docs-external.u4pp.com/extensions-kit/glossary/trigger/), an optional filter on the data contained in the Trigger event, and a sequence of one or more [Actions](https://docs-external.u4pp.com/extensions-kit/glossary/action/).  
-Below you will find a brief introduction of all the triggers that can be used when defining your flow and how to used each one in a flow.
+Below you will find a brief introduction of all the triggers that can be used when defining your flow and how to use each one in a flow.
 # Scheduled Events
 
 ## Description
@@ -15,7 +15,7 @@ The *Scheduled Event* trigger allows a flow to be initiated on a regular basis b
 # Webhook
 
 ## Description
-The *Webhook* trigger allows a HTTP request to initiate a Flow defined in the Unit4 Extension Kit (U4EK). In a typical scenario this trigger would be utilized to allow a workflow defined somewhere else to continue execution in a U4EK Flow.
+The *Webhook* trigger allows an HTTP request to initiate a flow defined in the Unit4 Extension Kit (U4EK). In a typical scenario this trigger would be used to allow a workflow defined somewhere else to continue execution in a U4EK Flow.
 
 ## Usage
 *Here you will find a step by step tutorial on how to create a flow sample with a webhook trigger*
@@ -26,7 +26,7 @@ The *Webhook* trigger allows a HTTP request to initiate a Flow defined in the Un
 # Message Hub Events
 
 ## Description
-The *Message Hub Event* trigger allows a flow to be initiated when a particular event is published on the Unit4 Message Hub by a specified source system. The triggering event on the MessageHub can be an generic event type, or an Enterprise document.
+The *Message Hub Event* trigger allows a flow to be initiated when a particular event is published on the Unit4 Message Hub by a specified source system. The triggering event on the MessageHub can be a generic event type or an Enterprise document.
 
 ## Usage
 *Here you will find a step by step tutorial on how to create a flow sample with a message hub event trigger*

@@ -1,18 +1,18 @@
-# Creating a flow with a ‘Message Hub event’ trigger
+# Creating a flow with the ‘Message Hub event’ trigger
 
 The Message Hub Event trigger allows a flow to be initiated when a particular event is published on the Unit4 Message Hub by a specified source system.
 
-Start configuration by selecting the trigger type: Message Hub Event
+Start configuration by selecting the Message Hub Event trigger type. 
  
  ![broken image](images/Message_Hub_Event_1.JPG)
 
-Then, add the Source System, Message Type, Name and Version. Every field counts with a dropdown to select the values, except Version field that will be filled according to the value set in Name field.
-Source System: system in charge of publish messages regarding events occurring in others or to notify others about changes on itself.
+Then, add: Source System, Message Type, Name and Version. Every field has a dropdown list, except the Version field which will be filled according to the value set in the Name field.
+Source System: a system in charge of publish messages regarding events occurring in other systems or to notify about its own changes.
 Message Type: supported messages options that can be published by a source system.
-Name: name of the event published by the source system.
-Version: most recent version of the event.
+Name: a name of the event published by the source system.
+Version: the most recent version of the event.
 
->Take into account that if there is no event created for the selected Source System, in Name and Version fields wouldn’t be anything to show (fields are writable and you can fill them manually, but it doesn't mean that your flow will be well-configured and works).
+>Take into account that if there is no event created for the selected Source System, the Name and Version fields will be blank (the fields are writable and you can fill them in manually, but it doesn't mean that your flow will be well-configured and will work).
 
 ![broken image](images/Message_Hub_Event_2.JPG)
 
@@ -30,4 +30,4 @@ After executing the request it will return the HTTP response status code and the
 
 ![broken image](images/Message_Hub_Event-7.JPG)
 
-Remember to add a name to your Flow and Save it.
+Remember to add a name to your flow and save it.
